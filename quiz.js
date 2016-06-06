@@ -35,7 +35,7 @@ var questionAndAnswer=[ // Object holding answers selected by the user
 var allQuizQuestions = [
 	{
 	question: "What hardcore band was Ian MacKaye in?", 
-	choices: ["Fuck Ups", "Minor Threat", "Big Boys", "Agnostic Front"], 
+	choices: ["Social Unrest", "Minor Threat", "Articles of Faith", "Agnostic Front"], 
 	correctAnswer:1
 	},
 	{
