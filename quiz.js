@@ -5,9 +5,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	overlayDiv.className +="overlayHidden";
 	}
 });
-
-
-
+var whichButtonClick=""; //String holding either "back" or "next"
 var correctAnswerFinalTotal=0 // initalize a variable that will be used by the displayQuizResults function to calculate the final quiz score
 var questionCounterVariable=0; // initialize a variable that counts questions shown
 var questionAndAnswer=[ // Object holding answers selected by the user
@@ -37,7 +35,7 @@ var questionAndAnswer=[ // Object holding answers selected by the user
 var allQuizQuestions = [
 	{
 	question: "What hardcore band was Ian MacKaye in?", 
-	choices: ["Social Unrest", "Minor Threat", "Big Boys", "Agnostic Front"], 
+	choices: ["Fuck Ups", "Minor Threat", "Big Boys", "Agnostic Front"], 
 	correctAnswer:1
 	},
 	{
@@ -113,12 +111,35 @@ function checkAnswer () {
 						 	if(answer==allQuestions[questionCounterVariable].correctAnswer) { // checks if the answer checked by user is the correct answer to the question on the quiz
 						 		console.log("Correct! You chose " + answer + ", and the correct answer is " + rightAnswer);
 						 		questionAndAnswer[questionCounterVariable].questionAnswer="correct";// changes question number property in questionAnswerArray to 1, or answered
-						 		advanceToNextQuestion();
-						 		return;
+						 		if (whichButtonClick=="next") { // if next button is clicked
+						 			advanceToNextQuestion();
+						 			return questionCounterVariable;
+						 			
+						 		} else if (whichButtonClick=="back"){ // if back button is clicked
+						 			if (questionCounterVariable==0) { // if user is on question 1, you can't go backwards, so prevent this function from executing
+											return false;
+									}
+									questionCounterVariable=questionCounterVariable-1; //subtract 1 from question counter variable
+									displayQuestion();
+									return questionCounterVariable;
+						 		}
+
 							} else {
 								console.log("Incorrect! You chose " + answer + ", but the correct answer is " + rightAnswer);	
 								questionAndAnswer[questionCounterVariable].questionAnswer="incorrect";// changes question number property in questionAnswerArray to 1, or answered
-								advanceToNextQuestion();
+								if (whichButtonClick=="next") { // if next button is clicked
+						 			advanceToNextQuestion();
+						 			return questionCounterVariable;
+						 			
+						 		} else if (whichButtonClick=="back"){ // if back button is clicked
+						 			if (questionCounterVariable==0) { // if user is on question 1, you can't go backwards, so prevent this function from executing
+										return false;
+									}
+									questionCounterVariable=questionCounterVariable-1; //subtract 1 from question counter variable
+									displayQuestion();
+									return questionCounterVariable;
+						 			
+						 		}
 						 	}
 					}  
 				}
@@ -142,7 +163,7 @@ function displayQuizResults () {
 			correctAnswerFinalTotal=correctAnswerFinalTotal + 1; // add 1 to correctAnswerFinalTotal for each correct answer (i.e. questionAnswer="correct") in questionAndAnswer object
 		}
 	}
-	var quizResult = "You got " + correctAnswerFinalTotal + "  correct questions.";
+	var quizResult = "You got " + correctAnswerFinalTotal + "  correct questions."; // output final quiz results to quizContainer div
 	document.getElementById("quizContainer").innerHTML = quizResult;
 }
 
@@ -155,32 +176,30 @@ function formValidation() {
 	alert("Please make a choice");
 }
 
-function backToPreviousQuestion () {
-	if (questionCounterVariable==0) { // if user is on question 1, you can't go backwards, so prevent this function from executing
-		return false;
-	}
-	questionCounterVariable=questionCounterVariable-1; //subtract 1 from question counter variable
-	displayQuestion();
-}
-
-
-
 //jquery event listeners for next and back buttons, to fade in/out and go to next/last question
-$( "#next" ).click(function() { 
-	var answeredQuestion = formValidation();;
+$( "#next" ).click(function(evt) { 
+	whichButtonClick = (this.id); // checks which button has been clicked and stores it in a variable
+	console.log(whichButtonClick);
+	
+	var answeredQuestion = formValidation();
 	if(answeredQuestion == true) {
 		  $('#quizContainer').animate({'opacity': 0}, 1000, function () {
 		  checkAnswer() }).animate({'opacity': 1}, 1000);
 	}
+	return whichButtonClick;
 });
 
 
-$( "#back" ).click(function() {
+$( "#back" ).click(function(evt) {
+	whichButtonClick = (this.id); // checks which button has been clicked and stores it in a variable
+	console.log(whichButtonClick);
+
 	var answeredQuestion = formValidation();;
 	if(answeredQuestion == true) {
 	   $('#quizContainer').animate({'opacity': 0}, 1000, function () {
-	   backToPreviousQuestion() }).animate({'opacity': 1}, 1000);
-	}
+	   checkAnswer() }).animate({'opacity': 1}, 1000);
+	}	
+	return whichButtonClick;
 });
 
 
@@ -207,5 +226,6 @@ if (localStorage.getItem("username") ) { // checks if there's a username propert
 
 }
 });
+
 
 
