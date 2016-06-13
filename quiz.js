@@ -1,4 +1,4 @@
-$.getJSON("http://codepen.io/julianpozzi/pen/yJOgBO", function(data) {}); // pulls in quiz questions from another pen
+$.getJSON("quizQuestions.json", function(data) {}); // pulls in quiz questions from another pen
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
