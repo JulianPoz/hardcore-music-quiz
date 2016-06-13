@@ -1,0 +1,182 @@
+var questionAndAnswerOne=[ // Object holding answers selected by the user
+  {
+  "questionNumber":1,
+  "questionAnswer":"unanswered",
+  "selectedAnswerIndex":null
+  },
+  {
+  "questionNumber":2,
+  "questionAnswer":"unanswered",
+  "selectedAnswerIndex":null
+  },
+  {
+  "questionNumber":3,
+  "questionAnswer":"unanswered",
+  "selectedAnswerIndex":null
+  },
+  {
+  "questionNumber":4,
+  "questionAnswer":"unanswered",
+  "selectedAnswerIndex":null
+  },
+], 
+  questionAndAnswerTwo=[ // Object holding answers selected by the user
+  {
+  "questionNumber":1,
+  "questionAnswer":"unanswered",
+  "selectedAnswerIndex":null
+  },
+  {
+  "questionNumber":2,
+  "questionAnswer":"unanswered",
+  "selectedAnswerIndex":null
+  },
+  {
+  "questionNumber":3,
+  "questionAnswer":"unanswered",
+  "selectedAnswerIndex":null
+  },
+  {
+  "questionNumber":4,
+  "questionAnswer":"unanswered",
+  "selectedAnswerIndex":null
+  },
+
+], questionAndAnswerThree=[ 
+  {
+  "questionNumber":1,
+  "questionAnswer":"unanswered",
+  "selectedAnswerIndex":null
+  },
+  {
+  "questionNumber":2,
+  "questionAnswer":"unanswered",
+  "selectedAnswerIndex":null
+  },
+  {
+  "questionNumber":3,
+  "questionAnswer":"unanswered",
+  "selectedAnswerIndex":null
+  },
+  {
+  "questionNumber":4,
+  "questionAnswer":"unanswered",
+  "selectedAnswerIndex":null
+  },
+
+],   questionAndAnswerFour=[ 
+  {
+  "questionNumber":1,
+  "questionAnswer":"unanswered",
+  "selectedAnswerIndex":null
+  },
+  {
+  "questionNumber":2,
+  "questionAnswer":"unanswered",
+  "selectedAnswerIndex":null
+  },
+  {
+  "questionNumber":3,
+  "questionAnswer":"unanswered",
+  "selectedAnswerIndex":null
+  },
+  {
+  "questionNumber":4,
+  "questionAnswer":"unanswered",
+  "selectedAnswerIndex":null
+  }
+
+]; 
+
+//Objects holding all questions and answers
+ allQuizQuestionsOne = [
+  {
+  "question": "What hardcore band was Ian MacKaye in?", 
+  "choices": ["Social Unrest", "Minor Threat", "Articles of Faith", "Agnostic Front"], 
+  "correctAnswer":1
+  },
+  {
+  "question": "What city were the Big Boys from?", 
+  "choices": ["Houston", "New York", "Austin", "New York"], 
+  "correctAnswer":2
+  },
+  
+  {
+  "question": "DRI were from what city?", 
+  "choices": ["Houston", "Austin", "Tuskeegee", "Paris"], 
+  "correctAnswer":0
+  },
+  {
+  "question": "'HR' stands for _____",
+  "choices": ["Human Rights", "Hairy Rebel", "Hate Read", "Hailie Rufus"],
+  "correctAnswer":0
+  },
+
+  
+], allQuizQuestionsTwo = [
+  {
+  "question": "What state were The Necros from?", 
+  "choices": ["Ohio", "Texas", "New York", "Minnesota"], 
+  "correctAnswer":0
+  },
+  {
+  "question": "What city were the Cro-Mags from?", 
+  "choices": ["Houston", "New York", "Austin", "New York"], 
+  "correctAnswer":1
+  },
+  {
+  "question": "Verbal Abuse were from what city orginally?", 
+  "choices": ["Houston", "Austin", "Tuskeegee", "Paris"], 
+  "correctAnswer":0
+  },
+  {
+  "question": "Social Unrest were from what state?",
+  "choices": ["California", "Texas", "Minnesota", "Florida"],
+  "correctAnswer":0
+  },
+
+], allQuizQuestionsThree = [
+  {
+  "question": "Who was the lead singer for Swiz?", 
+  "choices": ["Shawn Brown", "Dave Smalley", "Henry Rollins", "Bob Noxious"], 
+  "correctAnswer":0
+  },
+  {
+  "question": "What band did Mike Watt start after The Minutemen?", 
+  "choices": ["Fireeater", "Urban Waste", "Fugazi", "Firehose"], 
+  "correctAnswer":3
+  },
+  {
+  "question": "Who was the lead singer for Articles of Faith?", 
+  "choices": ["Trip Terror", "Vic Bondi", "Kevin Seconds", "Shawn Stern"], 
+  "correctAnswer":1
+  },
+  {
+  "question": "What did SSD originally stand for?",
+  "choices": ["Social Sex Device", "Society System Decontrol", "Sick Society Denial", "South Side Death"],
+  "correctAnswer":1
+  },
+
+],  allQuizQuestionsFour = [
+  {
+  "question": "Where were you in 82?", 
+  "choices": ["Nunya", "What?", "at a CB's matinee", "I'm only 12 years old"], 
+  "correctAnswer":0
+  },
+  {
+  "question": "What record label was Die Kreuzen on?", 
+  "choices": ["Bomp!", "Mystic", "Touch and Go", "Dischord"], 
+  "correctAnswer":1
+  },
+  {
+  "question": "Who sang 'I Hate Cops'?", 
+  "choices": ["The Authorities", "Black Flag", "Body Count", "Pariah"], 
+  "correctAnswer":0
+  },
+  {
+  "question": "Bad Posture were from what state?",
+  "choices": ["California", "Texas", "Minnesota", "Florida"],
+  "correctAnswer":0
+  }
+
+];
